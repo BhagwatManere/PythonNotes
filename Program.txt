@@ -1,0 +1,48 @@
+import numpy as np
+import csv
+with open('E:\God\Scodeen Global\Resume\Python Batch 5 _ 13+14+16+17\Python ETL Session 1.csv', 'r') as file:
+    csv_file = csv.DictReader(file)    
+
+    fname=[]
+    for row in csv_file:
+        
+        dict_converter=dict(row)
+        print(dict_converter)
+        f=dict_converter["fname"]
+        fname.append(f)
+        print(fname)
+
+lname=["patil","power"]
+domain="@amazon.com"
+fname_Total=len(fname)
+print(fname_Total)
+fname_count_variable=fname_Total
+if fname_Total==fname_count_variable:
+    print("fname count is",fname_count_variable)
+else:
+    print("error")
+lname_Total=len(lname)
+print(lname_Total)
+Mapping_dot=list(map(lambda x,y:x+'.'+y ,fname,lname))
+print(Mapping_dot)
+email=[]
+
+for i in Mapping_dot:
+    print(i)
+    email_creation=i+domain
+    print(email_creation)
+    p=len(email_creation)
+    # checking the length of email 
+
+    if p<=42:
+        print("perfect")
+    else:
+        print("not perfect")
+        
+    email.append(email_creation)
+    print(email)
+count_email=len(email)
+print(count_email)
+#checking the count of source and Target 
+if fname_Total==lname_Total==count_email:
+    print("This brilliant")
